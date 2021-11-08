@@ -2,5 +2,3 @@
 npm install mysql2
 npm install sequelize sequelize-cli
 npx sequelize init
-
-#GRAPHQL

@@ -4,20 +4,35 @@ const {
     GraphQLSchema,
 } = graphql;
 
+/*
+ ██▓███   █    ██  ▄▄▄▄    ██▓     ██▓ ▄████▄  
+▓██░  ██▒ ██  ▓██▒▓█████▄ ▓██▒    ▓██▒▒██▀ ▀█  
+▓██░ ██▓▒▓██  ▒██░▒██▒ ▄██▒██░    ▒██▒▒▓█    ▄ 
+▒██▄█▓▒ ▒▓▓█  ░██░▒██░█▀  ▒██░    ░██░▒▓▓▄ ▄██▒
+▒██▒ ░  ░▒▒█████▓ ░▓█  ▀█▓░██████▒░██░▒ ▓███▀ ░
+▒▓▒░ ░  ░░▒▓▒ ▒ ▒ ░▒▓███▀▒░ ▒░▓  ░░▓  ░ ░▒ ▒  ░
+░▒ ░     ░░▒░ ░ ░ ▒░▒   ░ ░ ░ ▒  ░ ▒ ░  ░  ▒   
+░░        ░░░ ░ ░  ░    ░   ░ ░    ▒ ░░        
+            ░      ░          ░  ░ ░  ░ ░      
+                        ░             ░       
+No auth needed to access to this part
+*/
+
 //USERS
-const {getAllUsers, createUser,} = require("./Users");
+const {getAllUsers, createUser, connect,} = require("./Users");
 
 const RootQuery = new GraphQLObjectType({
     name: "RootQueryType",
     fields: {
-        getAllUsers: getAllUsers
+        getAllUsers: getAllUsers,
     },
 });
 
 const Mutation = new GraphQLObjectType({
     name: "Mutation",
     fields: {
-        createUser: createUser
+        createUser: createUser,
+        connect: connect
     },
 });
 
